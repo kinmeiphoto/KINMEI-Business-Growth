@@ -23,18 +23,33 @@
   --ls-wide: 0.12em;
   --ls-wider: 0.2em;
   --ls-widest: 0.3em;
-  --type-h1-size: clamp(37px, -4.57px + 4.762vw, 64px);
-  --type-h1-lh: clamp(40px, 33.94px + 2.976vw, 76.8px);
-  --type-h2-size: clamp(32px, -4.57px + 4.762vw, 64px);
-  --type-h2-lh: clamp(38.4px, -5.49px + 5.714vw, 76.8px);
-  --type-h3-size: clamp(24px, -3.43px + 3.571vw, 48px);
-  --type-h3-lh: clamp(28.8px, -4.11px + 4.286vw, 57.6px);
-  --type-h4-size: clamp(20px, -5.14px + 3.274vw, 42px);
-  --type-h4-lh: clamp(24px, 7.54px + 2.143vw, 38.4px);
-  --fs-body: 16px;
+  --type-display-size: clamp(58px, 11vw, 136px);
+  --type-display-lh: 0.9;
+  --type-h1-size: clamp(42px, 5.6vw, 76px);
+  --type-h1-lh: 1.08;
+  --type-h2-size: clamp(34px, 4.8vw, 64px);
+  --type-h2-lh: 1.12;
+  --type-h3-size: clamp(24px, 2.7vw, 38px);
+  --type-h3-lh: 1.2;
+  --type-h4-size: clamp(20px, 1.7vw, 26px);
+  --type-h4-lh: 1.32;
+  --fs-body: clamp(15px, 0.35vw + 14px, 18px);
+  --fs-body-lg: clamp(18px, 1.2vw + 15px, 26px);
   --fs-caption: 13px;
   --fs-eyebrow: 12px;
-  --section-pad-y: clamp(64px, 10vw, 120px);
+  --lh-body: 1.82;
+  --lh-body-tight: 1.65;
+  --lh-caption: 1.45;
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 88px;
+  --section-pad-y: clamp(72px, 9vw, 128px);
   --section-pad-x: clamp(20px, 4vw, 40px);
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -62,7 +77,8 @@ body {
     linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 52%, var(--bg) 100%);
   color: var(--ink);
   font-family: var(--font-sans);
-  line-height: 1.8;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   letter-spacing: var(--ls-normal);
 }
 
@@ -104,6 +120,7 @@ h4 {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 h1 {
@@ -122,8 +139,12 @@ h3 {
 }
 
 h4 {
-  font-size: 1.25rem;
-  line-height: 1.35;
+  font-size: var(--type-h4-size);
+  line-height: var(--type-h4-lh);
+}
+
+p {
+  line-height: var(--lh-body);
 }
 
 .site-nav {
@@ -215,7 +236,7 @@ h4 {
 .home-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.62fr);
-  gap: clamp(32px, 6vw, 80px);
+  gap: clamp(var(--space-7), 6vw, var(--space-9));
   align-items: end;
   min-height: 100vh;
   padding-top: clamp(140px, 18vw, 210px);
@@ -227,7 +248,7 @@ h4 {
 .latest-event-copy,
 .detail-block {
   display: grid;
-  gap: 20px;
+  gap: var(--space-5);
 }
 
 .eyebrow {
@@ -236,22 +257,22 @@ h4 {
   font-size: var(--fs-eyebrow);
   font-weight: 700;
   letter-spacing: var(--ls-wider);
-  line-height: 1.3;
+  line-height: var(--lh-caption);
   text-transform: uppercase;
 }
 
 .hero-copy h1 {
   max-width: 10ch;
-  font-size: clamp(58px, 12vw, 144px);
-  line-height: 0.88;
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-lh);
 }
 
 .hero-lead {
   max-width: 720px;
   color: var(--ink);
-  font-size: clamp(22px, 3.6vw, 44px);
+  font-size: var(--fs-body-lg);
   font-weight: 700;
-  line-height: 1.25;
+  line-height: var(--lh-body-tight);
 }
 
 .hero-text,
@@ -264,7 +285,16 @@ h4 {
 .checkout-note,
 .organizer-card p {
   color: var(--ink-soft);
-  font-size: clamp(15px, 1.35vw, 18px);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.hero-text,
+.body-stack p,
+.section-head p:not(.eyebrow),
+.newsletter-section p,
+.detail-block p {
+  max-width: 46em;
 }
 
 .button {
@@ -303,7 +333,7 @@ h4 {
 .hero-ticket {
   display: grid;
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 20px;
+  gap: var(--space-5);
   height: clamp(560px, 68vh, 760px);
   overflow: hidden;
   padding: 0;
@@ -331,14 +361,14 @@ h4 {
 .hero-ticket-copy {
   display: grid;
   align-content: center;
-  gap: 14px;
+  gap: var(--space-3);
   min-height: 0;
   padding: clamp(22px, 4vw, 34px);
 }
 
 .hero-ticket-copy h2 {
-  font-size: clamp(22px, 2.8vw, 34px);
-  line-height: 1.25;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: var(--type-h3-lh);
 }
 
 .hero-ticket-copy .button {
@@ -350,9 +380,10 @@ h4 {
 
 .ticket-kicker {
   color: var(--accent);
-  font-size: 0.85rem;
+  font-size: var(--fs-caption);
   font-weight: 700;
   letter-spacing: var(--ls-wider);
+  line-height: var(--lh-caption);
   text-transform: uppercase;
 }
 
@@ -392,6 +423,7 @@ h4 {
   color: var(--ink-mute);
   font-size: 0.7rem;
   letter-spacing: var(--ls-wide);
+  line-height: var(--lh-caption);
   text-transform: uppercase;
 }
 
@@ -405,11 +437,12 @@ h4 {
 .section-label {
   display: flex;
   align-items: center;
-  gap: 24px;
-  margin-bottom: 48px;
+  gap: var(--space-5);
+  margin-bottom: var(--space-7);
   color: var(--ink-mute);
   font-size: 11px;
   letter-spacing: var(--ls-widest);
+  line-height: var(--lh-caption);
   text-transform: uppercase;
 }
 
@@ -429,7 +462,7 @@ h4 {
 .newsletter-section {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(32px, 6vw, 80px);
+  gap: clamp(var(--space-7), 6vw, var(--space-9));
 }
 
 .report-layout > p,
@@ -442,7 +475,7 @@ h4 {
 .session-list,
 .ticket-list {
   display: grid;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .focus-grid {
@@ -461,13 +494,14 @@ h4 {
 
 .focus-card div {
   display: grid;
-  gap: 12px;
-  padding: 24px;
+  gap: var(--space-3);
+  padding: var(--space-5);
 }
 
 .focus-card h3 {
   color: var(--ink);
-  font-size: clamp(26px, 3.5vw, 42px);
+  font-size: var(--type-h3-size);
+  line-height: var(--type-h3-lh);
 }
 
 .event-grid {
@@ -479,7 +513,7 @@ h4 {
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 0;
   overflow: hidden;
-  margin-bottom: 56px;
+  margin-bottom: var(--space-8);
 }
 
 .latest-event > img {
@@ -491,24 +525,26 @@ h4 {
 
 .latest-event-copy {
   align-content: center;
+  gap: var(--space-5);
   padding: clamp(28px, 5vw, 56px);
 }
 
 .event-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 14px;
+  gap: var(--space-1) var(--space-3);
   color: var(--ink-mute);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: var(--ls-wide);
+  line-height: var(--lh-caption);
   text-transform: uppercase;
 }
 
 .event-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-2);
   padding: 0;
   margin: 0;
   list-style: none;
@@ -522,14 +558,15 @@ h4 {
   color: var(--accent-soft);
   font-size: 0.76rem;
   font-weight: 700;
+  line-height: var(--lh-caption);
 }
 
 .archive-toolbar {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 24px;
+  gap: var(--space-5);
+  margin-bottom: var(--space-5);
 }
 
 .filter-row {
@@ -568,7 +605,7 @@ h4 {
 
 .empty-state {
   grid-column: 1 / -1;
-  padding: 28px;
+  padding: var(--space-6);
   border: 1px solid var(--rule);
   border-radius: var(--radius-md);
   background: rgba(255, 250, 245, 0.035);
@@ -583,8 +620,8 @@ h4 {
 
 .event-card-body {
   display: grid;
-  gap: 14px;
-  padding: 22px;
+  gap: var(--space-3);
+  padding: var(--space-5);
 }
 
 .newsletter-section {
@@ -597,8 +634,8 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 72px var(--section-pad-x) 36px;
+  gap: var(--space-5);
+  padding: var(--space-8) var(--section-pad-x) var(--space-6);
   border-top: 1px solid var(--rule);
   color: var(--ink-mute);
   width: 100%;
@@ -608,7 +645,7 @@ h4 {
 
 .site-footer div {
   display: grid;
-  gap: 12px;
+  gap: var(--space-3);
 }
 
 .site-footer img {
@@ -633,7 +670,7 @@ h4 {
   width: 100%;
   max-width: none;
   margin-inline: auto;
-  gap: clamp(28px, 5vw, 72px);
+  gap: clamp(var(--space-7), 5vw, var(--space-9));
   align-items: end;
 }
 
@@ -653,25 +690,27 @@ h4 {
 
 .event-hero-copy {
   display: grid;
-  gap: 20px;
+  gap: var(--space-5);
 }
 
 .event-hero-copy p:not(.eyebrow) {
+  max-width: 46em;
   color: var(--ink-soft);
-  font-size: clamp(16px, 1.5vw, 19px);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 .event-shell {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
-  gap: 32px;
+  gap: var(--space-6);
   align-items: start;
   padding-top: 0;
 }
 
 .event-detail {
   display: grid;
-  gap: 72px;
+  gap: var(--space-9);
 }
 
 .event-summary-grid {
@@ -686,8 +725,8 @@ h4 {
 
 .event-summary-grid div {
   display: grid;
-  gap: 8px;
-  padding: 24px;
+  gap: var(--space-2);
+  padding: var(--space-5);
   background: rgba(255, 250, 245, 0.045);
 }
 
@@ -697,11 +736,13 @@ h4 {
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: var(--ls-wider);
+  line-height: var(--lh-caption);
   text-transform: uppercase;
 }
 
 .event-summary-grid strong {
-  font-size: 1.2rem;
+  font-size: var(--type-h4-size);
+  line-height: var(--type-h4-lh);
 }
 
 .event-summary-grid p {
@@ -710,20 +751,20 @@ h4 {
 
 .session-list,
 .ticket-list {
-  margin-top: 12px;
+  margin-top: var(--space-2);
 }
 
 .session-list article,
 .ticket-list article {
   display: grid;
-  gap: 10px;
-  padding: 24px 0;
+  gap: var(--space-2);
+  padding: var(--space-5) 0;
   border-top: 1px solid var(--rule);
 }
 
 .event-timetable {
   padding: 0;
-  margin: 12px 0 0;
+  margin: var(--space-2) 0 0;
   list-style: none;
   border-top: 1px solid var(--rule);
 }
@@ -731,8 +772,8 @@ h4 {
 .event-timetable li {
   display: grid;
   grid-template-columns: 92px 1fr;
-  gap: 20px;
-  padding: 20px 0;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -740,11 +781,13 @@ h4 {
   color: var(--accent);
   font-family: var(--font-latin);
   font-weight: 700;
+  line-height: var(--lh-caption);
 }
 
 .event-timetable span {
   color: var(--ink);
   font-weight: 700;
+  line-height: var(--lh-body-tight);
 }
 
 .ticket-list article {
@@ -755,27 +798,28 @@ h4 {
 .ticket-list strong {
   color: var(--accent-soft);
   font-family: var(--font-latin);
-  font-size: 1.4rem;
+  font-size: var(--type-h4-size);
+  line-height: var(--type-h4-lh);
 }
 
 .checkout-panel {
   position: sticky;
   top: 118px;
   display: grid;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
 .checkout-card,
 .organizer-card {
   display: grid;
-  gap: 20px;
-  padding: 24px;
+  gap: var(--space-5);
+  padding: var(--space-5);
 }
 
 .checkout-card h2 {
   font-family: var(--font-latin);
-  font-size: 2.8rem;
-  line-height: 1;
+  font-size: clamp(34px, 3.6vw, 48px);
+  line-height: 1.05;
 }
 
 .checkout-card dl {
@@ -788,8 +832,8 @@ h4 {
 .checkout-card dl div {
   display: grid;
   grid-template-columns: 78px 1fr;
-  gap: 12px;
-  padding: 14px 0;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -797,6 +841,7 @@ h4 {
   color: var(--ink-mute);
   font-size: 0.75rem;
   letter-spacing: var(--ls-wide);
+  line-height: var(--lh-caption);
   text-transform: uppercase;
 }
 
