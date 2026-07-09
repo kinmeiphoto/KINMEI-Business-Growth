@@ -449,49 +449,12 @@ h4 {
   align-self: end;
 }
 
-.metric-grid,
 .focus-grid,
-.content-grid,
 .event-grid,
 .session-list,
 .ticket-list {
   display: grid;
   gap: 16px;
-}
-
-.metric-grid {
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 56px;
-}
-
-.metric-grid article,
-.content-card {
-  min-height: 220px;
-  padding: 28px;
-  border: 1px solid var(--rule);
-  border-radius: var(--radius-md);
-  background: rgba(255, 250, 245, 0.035);
-}
-
-.metric-grid span {
-  color: var(--accent);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: var(--ls-wider);
-  text-transform: uppercase;
-}
-
-.metric-grid strong {
-  display: block;
-  margin: 14px 0 10px;
-  color: var(--accent-soft);
-  font-family: var(--font-latin);
-  font-size: clamp(42px, 6vw, 72px);
-  line-height: 1;
-}
-
-.metric-grid p {
-  color: var(--ink-soft);
 }
 
 .focus-grid {
@@ -519,25 +482,8 @@ h4 {
   font-size: clamp(26px, 3.5vw, 42px);
 }
 
-.content-grid,
 .event-grid {
   grid-template-columns: repeat(4, 1fr);
-}
-
-.content-card {
-  display: grid;
-  align-content: start;
-  gap: 24px;
-  transition: border-color 0.2s ease, transform 0.2s ease;
-}
-
-.content-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-}
-
-.content-card p {
-  color: var(--ink-soft);
 }
 
 .latest-event {
@@ -891,9 +837,7 @@ h4 {
     grid-template-columns: 1fr;
   }
 
-  .metric-grid,
   .focus-grid,
-  .content-grid,
   .event-grid,
   .event-summary-grid {
     grid-template-columns: 1fr 1fr;
@@ -937,9 +881,7 @@ h4 {
     min-height: 360px;
   }
 
-  .metric-grid,
   .focus-grid,
-  .content-grid,
   .event-grid,
   .event-summary-grid,
   .ticket-stats {
