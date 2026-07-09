@@ -319,8 +319,9 @@ h4 {
 
 .hero-ticket {
   display: grid;
-  gap: 22px;
-  padding: clamp(24px, 4vw, 42px);
+  gap: 20px;
+  overflow: hidden;
+  padding: 0;
 }
 
 .ticket-kicker,
@@ -335,6 +336,23 @@ h4 {
 .checkout-card dt,
 .organizer-card span {
   font-family: var(--font-latin);
+}
+
+.hero-ticket-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.hero-ticket-copy {
+  display: grid;
+  gap: 14px;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.hero-ticket-copy h2 {
+  font-size: clamp(22px, 2.8vw, 34px);
+  line-height: 1.25;
 }
 
 .ticket-kicker {

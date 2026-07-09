@@ -1,16 +1,15 @@
 const events = [
   {
-    id: "business-growth-2026",
-    title: "KINMEI Business Growth 2026",
-    date: "2026-10-18",
-    time: "10:00 - 19:00",
+    id: "taopix-ai-growth-2026",
+    title: "TAOPIXの代表に聞く：AI時代の新たな印刷業の成長戦略",
+    date: "2026-07-23",
+    time: "13:00 - 15:00",
     venue: "Tokyo / Hybrid",
     status: "open",
     summary:
-      "AI、制作ワークフロー、写真体験、EC、地域ビジネスを横断し、新しいビジネスを創り出すための1日。",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80",
-    tags: ["AI", "Business Design", "Community"],
+      "TAOPIXの代表を迎え、AI時代に印刷業がどのように新しい成長戦略を描くかを聞くオンライン/ハイブリッドイベントです。",
+    image: "./assets/james-gray-headshot.webp",
+    tags: ["AI", "Growth Strategy", "TAOPIX"],
     ctaLabel: "イベント詳細を見る",
     ctaUrl: "./event.html",
   },
@@ -66,6 +65,24 @@ function renderLatestEvent() {
       <a class="button button-primary" href="${latestEvent.ctaUrl || "./event.html"}">
         ${latestEvent.ctaLabel || "詳細を見る"}
       </a>
+    </div>
+  `;
+}
+
+function renderHeroLatestEvent() {
+  const root = document.querySelector("#hero-latest-event");
+  if (!root) return;
+
+  root.innerHTML = `
+    <img class="hero-ticket-thumb" src="${latestEvent.image}" alt="${latestEvent.title}のサムネイル" />
+    <div class="hero-ticket-copy">
+      <p class="ticket-kicker">LATEST EVENT</p>
+      <h2>${latestEvent.title}</h2>
+      <div class="event-meta">
+        <span>${formatDate(latestEvent.date)}</span>
+        <span>${latestEvent.time}</span>
+        <span>${latestEvent.venue}</span>
+      </div>
     </div>
   `;
 }
@@ -131,6 +148,7 @@ function renderPastEvents() {
     .join("");
 }
 
+renderHeroLatestEvent();
 renderLatestEvent();
 renderFilters();
 renderPastEvents();
