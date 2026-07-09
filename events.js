@@ -9,7 +9,7 @@ const events = [
     status: "open",
     summary:
       "TAOPIXの代表を迎え、AI時代に印刷業がどのように新しい成長戦略を描くかを聞く会場開催イベントです。",
-    image: "./assets/james-gray-headshot.webp",
+    image: "./assets/event-room.jpg",
     tags: ["AI", "Growth Strategy", "TAOPIX"],
     ctaLabel: "イベント詳細を見る",
     ctaUrl: "./event.html",
