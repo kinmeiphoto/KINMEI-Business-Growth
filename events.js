@@ -83,6 +83,9 @@ function renderHeroLatestEvent() {
         <span>${latestEvent.time}</span>
         <span>${latestEvent.venue}</span>
       </div>
+      <a class="button button-primary" href="${latestEvent.ctaUrl || "./event.html"}">
+        ${latestEvent.ctaLabel || "イベント詳細を見る"}
+      </a>
     </div>
   `;
 }
