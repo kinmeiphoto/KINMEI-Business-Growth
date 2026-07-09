@@ -610,6 +610,15 @@ h4 {
   overflow: hidden;
 }
 
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 28px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  background: rgba(255, 250, 245, 0.035);
+  color: var(--ink-soft);
+}
+
 .event-card img {
   width: 100%;
   aspect-ratio: 4 / 3;

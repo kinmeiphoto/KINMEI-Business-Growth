@@ -14,58 +14,6 @@ const events = [
     ctaLabel: "イベント詳細を見る",
     ctaUrl: "./event.html",
   },
-  {
-    id: "workflow-lab-2026",
-    title: "Business Workflow Lab",
-    date: "2026-04-22",
-    time: "15:00 - 18:00",
-    venue: "Osaka",
-    status: "closed",
-    summary:
-      "少量多品種、EC連携、制作進行をテーマに、事業成長を支える業務設計を議論しました。",
-    image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=80",
-    tags: ["Workflow", "Automation"],
-  },
-  {
-    id: "photo-commerce-2025",
-    title: "Photo Commerce Meetup",
-    date: "2025-11-07",
-    time: "13:00 - 17:00",
-    venue: "Nagoya",
-    status: "closed",
-    summary:
-      "写真体験、アルバム、EC、店頭接客をつなぎ、顧客接点を増やすサービスづくりを扱いました。",
-    image:
-      "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?auto=format&fit=crop&w=1000&q=80",
-    tags: ["Photo", "Commerce"],
-  },
-  {
-    id: "package-growth-2025",
-    title: "Packaging Growth Session",
-    date: "2025-06-14",
-    time: "14:00 - 18:30",
-    venue: "Fukuoka",
-    status: "closed",
-    summary:
-      "パッケージ、販促物、ブランド体験を組み合わせ、印刷会社が提案できる価値を整理しました。",
-    image:
-      "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1000&q=80",
-    tags: ["Packaging", "Brand"],
-  },
-  {
-    id: "local-business-2024",
-    title: "Local Business Design Forum",
-    date: "2024-09-20",
-    time: "10:30 - 16:30",
-    venue: "Kyoto",
-    status: "closed",
-    summary:
-      "地域企業、自治体、制作会社が集まり、印刷と写真を活用した地域事業の作り方を議論しました。",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80",
-    tags: ["Local", "Sustainability"],
-  },
 ];
 
 const formatter = new Intl.DateTimeFormat("ja-JP", {
@@ -126,6 +74,11 @@ function renderFilters() {
   const root = document.querySelector("#event-filters");
   if (!root) return;
 
+  if (!pastEvents.length) {
+    root.innerHTML = "";
+    return;
+  }
+
   const years = [...new Set(pastEvents.map((event) => getYear(event.date)))];
   const filterItems = ["all", ...years];
   root.innerHTML = filterItems
@@ -154,7 +107,7 @@ function renderPastEvents() {
       : pastEvents.filter((event) => getYear(event.date) === activeYear);
 
   if (!visibleEvents.length) {
-    root.innerHTML = `<p class="empty-state">該当する過去イベントはまだありません。</p>`;
+    root.innerHTML = `<p class="empty-state">過去のイベントはありません</p>`;
     return;
   }
 
