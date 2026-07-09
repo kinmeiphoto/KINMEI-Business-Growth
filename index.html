@@ -5,317 +5,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="KINMEI Print Growth は、印刷に関わる人たちが新しい可能性を持ち帰るためのイベントコミュニティです。"
+      content="KINMEI Business Growth は、新しいビジネスを創り出し、成長させるためのイベントコミュニティです。"
     />
-    <title>KINMEI Print Growth</title>
+    <title>KINMEI Business Growth</title>
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
-    <header class="site-header" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="KINMEI Print Growth home">
-        <span class="brand-mark">K</span>
-        <span>KINMEI Print Growth</span>
+  <body data-page="home">
+    <header class="site-nav" aria-label="Primary navigation">
+      <a class="logo-link" href="./index.html" aria-label="KINMEI Business Growth home">
+        <img class="brand-logo" src="./assets/logo.png" alt="Kinmei Graphic Arts フォトイメージング事業部" />
       </a>
-      <nav class="site-nav">
+      <nav class="nav-links" aria-label="Site navigation">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
+        <a href="#focus">Focus</a>
         <a href="#events">Events</a>
-        <a href="#faq">FAQ</a>
+        <a href="./event.html">Ticket</a>
       </nav>
-      <a class="header-action" href="#latest-event">Join</a>
+      <a class="nav-cta" href="./event.html">参加する</a>
     </header>
 
-    <main id="top">
-      <section class="hero section-grid" aria-labelledby="hero-title">
+    <main>
+      <section class="hero home-hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">PRINT / COMMUNITY / GROWTH</p>
-          <h1 id="hero-title">Print Growth.</h1>
-          <p class="hero-lead">印刷の、その先へ。</p>
+          <p class="eyebrow">KINMEI BUSINESS FORUM</p>
+          <h1 id="hero-title">Business Growth.</h1>
+          <p class="hero-lead">新しいビジネスを創り出し、成長させる。</p>
           <p class="hero-text">
-            印刷は、紙に刷る仕事だけではありません。ブランドを届けること。体験をつくること。
-            地域や産業を支えること。KINMEI Print Growth は、印刷に関わる人たちが、
-            新しい可能性を持ち帰るための場です。
+            KINMEI Business Growth は、印刷、写真、制作、EC、AI、地域産業を横断し、
+            次の事業機会を見つけるためのカンファレンスです。学ぶだけで終わらせず、
+            商談、実装、継続的なコミュニティにつなげます。
           </p>
-          <div class="button-row" aria-label="Hero actions">
-            <a class="button button-primary" href="#latest-event">イベントに参加する</a>
-            <a class="button button-secondary" href="#events">開催概要を見る</a>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./event.html">イベント詳細を見る</a>
+            <a class="button button-ghost" href="#events">開催一覧へ</a>
           </div>
         </div>
-        <div class="hero-visual" aria-label="イベント会場で対話する参加者の写真">
-          <img
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=80"
-            alt="カンファレンス会場で登壇を聞く参加者"
-          />
-          <div class="hero-label">
-            <span>2026 Theme</span>
-            <strong>Print x AI x Future</strong>
-          </div>
-        </div>
-      </section>
 
-      <section class="section section-grid" aria-labelledby="why-title">
-        <div>
-          <p class="eyebrow">WHY NOW</p>
-          <h2 id="why-title">印刷業界はいま、静かに変わり始めています。</h2>
-        </div>
-        <div class="stack">
-          <ul class="change-list">
-            <li>AIが制作や見積もりを支援する</li>
-            <li>少量・多品種が当たり前になる</li>
-            <li>ECと印刷の境界がなくなる</li>
-            <li>環境配慮が選ばれる理由になる</li>
-            <li>「印刷会社」ではなく「価値をつくる会社」が求められる</li>
-          </ul>
-          <blockquote>
-            時代が変わるたびに、印刷も進化してきました。今回も、その延長線上にあります。
-          </blockquote>
-        </div>
-      </section>
-
-      <section class="section dark-band" id="about" aria-labelledby="about-title">
-        <div class="section-grid">
-          <div>
-            <p class="eyebrow">ABOUT</p>
-            <h2 id="about-title">学ぶためだけではなく、次の一歩を見つけるために。</h2>
-          </div>
-          <div>
-            <p class="body-large">
-              KINMEI Print Growth は、印刷会社、メーカー、デザイナー、ブランド、学生など、
-              立場を越えて集まり、対話し、実践につなげるコミュニティです。
-            </p>
-          </div>
-        </div>
-        <div class="value-grid" aria-label="Three values">
-          <article class="value-card">
-            <span>01</span>
-            <h3>Learn</h3>
-            <p>世界と現場から学ぶ</p>
-          </article>
-          <article class="value-card">
-            <span>02</span>
-            <h3>Meet</h3>
-            <p>新しい仲間やパートナーと出会う</p>
-          </article>
-          <article class="value-card">
-            <span>03</span>
-            <h3>Build</h3>
-            <p>明日から試せるアイデアを持ち帰る</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading">
-          <p class="eyebrow">EVENT EXPERIENCE</p>
-          <h2 id="experience-title">一日で終わらないイベントを目指しています。</h2>
-        </div>
-        <div class="experience-grid">
-          <figure class="experience-feature">
-            <img
-              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80"
-              alt="ワークショップで付箋を使って議論する参加者"
-            />
-            <figcaption>Workshop</figcaption>
-          </figure>
-          <div class="experience-list">
-            <span>Keynote</span>
-            <span>Session</span>
-            <span>Workshop</span>
-            <span>Exhibition</span>
-            <span>Networking</span>
-            <span>After Event Community</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="section theme-section" aria-labelledby="theme-title">
-        <div class="theme-copy">
-          <p class="eyebrow">THIS YEAR</p>
-          <h2 id="theme-title">Print x AI x Future</h2>
-          <ul class="question-list">
-            <li>AIで何が変わるのか。</li>
-            <li>人だからできる価値とは何か。</li>
-            <li>印刷会社は次に何を提供するのか。</li>
-          </ul>
-        </div>
-        <ol class="timeline" aria-label="Event timeline">
-          <li>
-            <time>10:00</time>
-            <span>Opening Talk</span>
-          </li>
-          <li>
-            <time>11:00</time>
-            <span>AI Workflow Session</span>
-          </li>
-          <li>
-            <time>13:30</time>
-            <span>Hands-on Workshop</span>
-          </li>
-          <li>
-            <time>16:00</time>
-            <span>Exhibition Walk</span>
-          </li>
-          <li>
-            <time>18:00</time>
-            <span>Community Meetup</span>
-          </li>
-        </ol>
-      </section>
-
-      <section class="section" aria-labelledby="topics-title">
-        <div class="section-heading compact">
-          <p class="eyebrow">FEATURED TOPICS</p>
-          <h2 id="topics-title">現場に持ち帰れる問いを扱います。</h2>
-        </div>
-        <div class="topic-grid" aria-label="Featured topics">
-          <span>AI</span>
-          <span>Workflow</span>
-          <span>Automation</span>
-          <span>Color</span>
-          <span>Packaging</span>
-          <span>Variable Data</span>
-          <span>Marketing</span>
-          <span>Sustainability</span>
-          <span>Commerce</span>
-        </div>
-      </section>
-
-      <section class="section speakers" aria-labelledby="speakers-title">
-        <div class="section-heading">
-          <p class="eyebrow">SPEAKERS</p>
-          <h2 id="speakers-title">肩書きよりも、どんな挑戦をしている人か。</h2>
-        </div>
-        <div class="speaker-grid">
-          <article class="speaker-card">
-            <img
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80"
-              alt="プロジェクトについて話す登壇者"
-            />
+        <aside class="hero-ticket" aria-label="Next event summary">
+          <p class="ticket-kicker">Next Event</p>
+          <time class="ticket-date" datetime="2026-10-18">2026.10.18</time>
+          <p class="ticket-place">Tokyo / Hybrid</p>
+          <div class="ticket-divider"></div>
+          <dl class="ticket-stats">
             <div>
-              <p class="speaker-status">Confirmed</p>
-              <h3>AIで制作工程を再設計する人</h3>
-              <p>見積もり、校正、進行管理を横断して、現場の無理を減らす仕組みを実践中。</p>
+              <dt>Sessions</dt>
+              <dd>12</dd>
             </div>
-          </article>
-          <article class="speaker-card speaker-card-muted">
             <div>
-              <p class="speaker-status">Coming Soon</p>
-              <h3>地域とブランドをつなぐ人</h3>
-              <p>印刷物を納品物ではなく、体験の入口として設計する取り組みを紹介予定。</p>
+              <dt>Partners</dt>
+              <dd>24</dd>
             </div>
-          </article>
-        </div>
+            <div>
+              <dt>Capacity</dt>
+              <dd>300</dd>
+            </div>
+          </dl>
+        </aside>
       </section>
 
-      <section class="section community-section" aria-labelledby="community-title">
-        <div>
-          <p class="eyebrow">COMMUNITY</p>
-          <h2 id="community-title">イベントは入口です。</h2>
+      <section class="section report-band" aria-labelledby="report-title">
+        <div class="section-label">
+          <span>01</span>
+          <span>Official Report</span>
         </div>
-        <div class="community-copy">
+        <div class="report-layout">
+          <div>
+            <p class="eyebrow">HIGHLIGHT</p>
+            <h2 id="report-title">事業の種を、持ち帰れる場へ。</h2>
+          </div>
           <p>
-            本当に価値が生まれるのは、イベントが終わったあと。
-            Meetup、勉強会、Newsletter、オンライン交流、ナレッジ共有を通じて、
-            小さく試す人を増やしていきます。
+            参加者、登壇者、パートナー企業が一方通行に情報を受け取るのではなく、
+            その場で相談し、検証し、次のアクションを決められる設計にします。
           </p>
+        </div>
+        <div class="metric-grid" aria-label="Event metrics">
+          <article>
+            <span>Visitors</span>
+            <strong>420+</strong>
+            <p>経営者、事業責任者、制作現場、学生が参加</p>
+          </article>
+          <article>
+            <span>Meetings</span>
+            <strong>86</strong>
+            <p>会期中に生まれた相談、商談、共同企画</p>
+          </article>
+          <article>
+            <span>Speakers</span>
+            <strong>38</strong>
+            <p>事業づくりを実践する登壇者とファシリテーター</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="about" aria-labelledby="about-title">
+        <div>
+          <div class="section-label">
+            <span>02</span>
+            <span>About</span>
+          </div>
+          <h2 id="about-title">印刷の技術を、事業成長の力に変える。</h2>
+        </div>
+        <div class="body-stack">
+          <p>
+            印刷会社に求められているのは、印刷物をつくる力だけではありません。
+            顧客のブランド、販売、採用、地域との接点を理解し、事業そのものを前に進める提案です。
+          </p>
+          <p>
+            KINMEI Business Growth は、AI、ワークフロー、商品開発、パッケージ、EC、写真体験をテーマに、
+            現場で試せるアイデアと協業の接点を増やします。
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="focus" aria-labelledby="focus-title">
+        <div class="section-label">
+          <span>03</span>
+          <span>Focus on</span>
+        </div>
+        <div class="section-head">
+          <p class="eyebrow">FOCUS AREA</p>
+          <h2 id="focus-title">成長の起点になるテーマ。</h2>
+        </div>
+        <div class="focus-grid">
+          <article class="glass-card focus-card">
+            <img
+              src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1100&q=80"
+              alt="AIを活用したデータ分析の画面"
+            />
+            <div>
+              <h3>AI</h3>
+              <p>制作、見積もり、販促、問い合わせ対応を、現場の使い方から考えます。</p>
+            </div>
+          </article>
+          <article class="glass-card focus-card">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1100&q=80"
+              alt="会議室で新規事業について話すチーム"
+            />
+            <div>
+              <h3>Business Design</h3>
+              <p>印刷物、写真、EC、イベントを組み合わせ、新しい収益導線を設計します。</p>
+            </div>
+          </article>
+          <article class="glass-card focus-card">
+            <img
+              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1100&q=80"
+              alt="ワークショップで作業する参加者"
+            />
+            <div>
+              <h3>Community</h3>
+              <p>イベント後も相談、勉強会、実証プロジェクトにつながる関係をつくります。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contents-section" aria-labelledby="contents-title">
+        <div class="section-label">
+          <span>04</span>
+          <span>Contents</span>
+        </div>
+        <div class="section-head">
+          <p class="eyebrow">PROGRAM</p>
+          <h2 id="contents-title">一日を、事業づくりの流れで設計する。</h2>
+        </div>
+        <div class="content-grid">
+          <a class="content-card" href="./event.html#sessions">
+            <span>01</span>
+            <h3>Sessions</h3>
+            <p>AI、ワークフロー、商品開発、地域ビジネスの実践者が登壇。</p>
+          </a>
+          <a class="content-card" href="./event.html#timetable">
+            <span>02</span>
+            <h3>Timetable</h3>
+            <p>基調講演からワークショップ、交流会までを一覧で確認。</p>
+          </a>
+          <a class="content-card" href="./event.html#tickets">
+            <span>03</span>
+            <h3>Ticket</h3>
+            <p>一般参加、学生、パートナー向けのチケットを用意。</p>
+          </a>
+          <a class="content-card" href="#events">
+            <span>04</span>
+            <h3>Archive</h3>
+            <p>今後増えるイベントを最新/過去に分けて継続管理。</p>
+          </a>
         </div>
       </section>
 
       <section class="section events-section" id="events" aria-labelledby="events-title">
-        <div class="section-heading">
-          <p class="eyebrow">EVENTS</p>
-          <h2 id="events-title">イベントを育てながら、記録も残していく。</h2>
-          <p>
-            開催ごとの記録を積み重ね、次に参加する人が場の空気をたどれるようにします。
-          </p>
+        <div class="section-label">
+          <span>05</span>
+          <span>Events</span>
         </div>
-
-        <article class="latest-event" id="latest-event" aria-live="polite"></article>
-
-        <div class="archive-toolbar" aria-label="Event archive tools">
-          <div>
-            <p class="eyebrow">ARCHIVE</p>
-            <h3>Past Events</h3>
-          </div>
+        <div class="section-head">
+          <p class="eyebrow">LATEST / ARCHIVE</p>
+          <h2 id="events-title">開催情報を育てていく。</h2>
+        </div>
+        <article class="latest-event glass-card" id="latest-event" aria-live="polite"></article>
+        <div class="archive-toolbar">
+          <h3>Past Events</h3>
           <div class="filter-row" id="event-filters" aria-label="Year filters"></div>
         </div>
         <div class="event-grid" id="past-events" aria-live="polite"></div>
       </section>
 
-      <section class="section archive-section" aria-labelledby="archive-title">
-        <div class="archive-photo">
-          <img
-            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
-            alt="テーブルを囲んで作業する参加者"
-          />
-        </div>
-        <div class="archive-stats">
-          <p class="eyebrow">GROWTH RECORD</p>
-          <h2 id="archive-title">数字より写真を優先し、場の温度を残します。</h2>
-          <dl>
-            <div>
-              <dt>Visitors</dt>
-              <dd>420+</dd>
-            </div>
-            <div>
-              <dt>Speakers</dt>
-              <dd>38</dd>
-            </div>
-            <div>
-              <dt>Companies</dt>
-              <dd>96</dd>
-            </div>
-          </dl>
-        </div>
-      </section>
-
-      <section class="section sponsor-section" aria-labelledby="sponsor-title">
-        <p class="eyebrow">SPONSOR</p>
-        <h2 id="sponsor-title">この取り組みに共感いただけるパートナーを募集しています。</h2>
-        <div class="sponsor-grid" aria-label="Sponsor placeholders">
-          <span>Partner A</span>
-          <span>Partner B</span>
-          <span>Partner C</span>
-          <span>Partner D</span>
-        </div>
-      </section>
-
-      <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <section class="section newsletter-section" aria-labelledby="newsletter-title">
         <div>
-          <p class="eyebrow">FAQ</p>
-          <h2 id="faq-title">よくある質問</h2>
+          <p class="eyebrow">AFTER EVENT</p>
+          <h2 id="newsletter-title">イベントは入口です。</h2>
         </div>
-        <div class="faq-list">
-          <details>
-            <summary>初参加でも大丈夫ですか</summary>
-            <p>はい。業界歴や職種に関わらず参加しやすいセッション構成にしています。</p>
-          </details>
-          <details>
-            <summary>印刷会社以外でも参加できますか</summary>
-            <p>参加できます。メーカー、デザイナー、ブランド担当者、学生の方も歓迎します。</p>
-          </details>
-          <details>
-            <summary>オンライン配信はありますか</summary>
-            <p>一部セッションの配信を予定しています。詳細はイベントごとの案内をご確認ください。</p>
-          </details>
-          <details>
-            <summary>領収書は発行できますか</summary>
-            <p>発行できます。申し込み後の案内メールから申請してください。</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="final-cta" aria-labelledby="final-title">
-        <p class="eyebrow">JOIN THE NEXT EVENT</p>
-        <h2 id="final-title">印刷の未来は、誰かがつくるものではありません。</h2>
-        <p>私たち一人ひとりの挑戦から始まります。</p>
-        <a class="button button-primary" href="#latest-event">イベントに参加する</a>
+        <p>
+          次回の告知、レポート、登壇者インタビュー、勉強会を継続的に届けます。
+          一度の参加で終わらず、事業の実験を続けるコミュニティへ接続します。
+        </p>
+        <a class="button button-primary" href="./event.html">次回イベントを見る</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>KINMEI Print Growth</p>
+      <div>
+        <img src="./assets/logo.png" alt="Kinmei Graphic Arts フォトイメージング事業部" />
+        <p>KINMEI Business Growth</p>
+      </div>
       <a href="#top">Back to top</a>
     </footer>
 
