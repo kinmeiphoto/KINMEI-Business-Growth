@@ -4,12 +4,9 @@ Static landing page for KINMEI Print Growth.
 
 ## GitHub Pages
 
-This repository is ready for GitHub Pages with GitHub Actions.
+This repository is deployed with GitHub Pages from the `main` branch root.
 
-1. Push this repository to GitHub.
-2. Open the repository on GitHub.
-3. Go to `Settings` -> `Pages`.
-4. Set `Source` to `GitHub Actions`.
-5. Push to `main` or run the `Deploy static site to GitHub Pages` workflow manually.
+- Repository: https://github.com/takuronakakyama/kinmei-print-growth
+- Site: https://takuronakakyama.github.io/kinmei-print-growth/
 
 The site is served from `index.html`; events are managed in `events.js`.
