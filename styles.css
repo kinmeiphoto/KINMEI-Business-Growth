@@ -267,13 +267,6 @@ h4 {
   font-size: clamp(15px, 1.35vw, 18px);
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 12px;
-}
-
 .button {
   display: inline-flex;
   align-items: center;
@@ -293,15 +286,6 @@ h4 {
   color: var(--logo-brown);
 }
 
-.button-ghost {
-  background: var(--glass);
-  color: var(--ink);
-}
-
-.button-ghost:hover {
-  border-color: var(--accent);
-}
-
 .hero-ticket,
 .glass-card,
 .checkout-card,
@@ -318,7 +302,9 @@ h4 {
 
 .hero-ticket {
   display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   gap: 20px;
+  height: clamp(560px, 68vh, 760px);
   overflow: hidden;
   padding: 0;
 }
@@ -338,13 +324,15 @@ h4 {
 
 .hero-ticket-thumb {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
 }
 
 .hero-ticket-copy {
   display: grid;
+  align-content: center;
   gap: 14px;
+  min-height: 0;
   padding: clamp(22px, 4vw, 34px);
 }
 
