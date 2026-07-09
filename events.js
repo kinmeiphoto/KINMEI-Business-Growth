@@ -4,7 +4,8 @@ const events = [
     title: "TAOPIXの代表に聞く：AI時代の新たな印刷業の成長戦略",
     date: "2026-07-23",
     time: "13:00 - 15:00",
-    venue: "Tokyo / Hybrid",
+    venue: "錦明印刷会社 本社７F イベントルーム",
+    address: "東京都千代田区西神田3-3-3",
     status: "open",
     summary:
       "TAOPIXの代表を迎え、AI時代に印刷業がどのように新しい成長戦略を描くかを聞くオンライン/ハイブリッドイベントです。",
@@ -59,6 +60,7 @@ function renderLatestEvent() {
         <span>${formatDate(latestEvent.date)}</span>
         <span>${latestEvent.time}</span>
         <span>${latestEvent.venue}</span>
+        <span>${latestEvent.address}</span>
       </div>
       <p>${latestEvent.summary}</p>
       <ul class="event-tags" aria-label="Event tags">${tagList(latestEvent.tags)}</ul>
@@ -82,6 +84,7 @@ function renderHeroLatestEvent() {
         <span>${formatDate(latestEvent.date)}</span>
         <span>${latestEvent.time}</span>
         <span>${latestEvent.venue}</span>
+        <span>${latestEvent.address}</span>
       </div>
       <a class="button button-primary" href="${latestEvent.ctaUrl || "./event.html"}">
         ${latestEvent.ctaLabel || "イベント詳細を見る"}
