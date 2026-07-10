@@ -19,7 +19,14 @@ TOP は SusHi Tech Tokyo のように、巨大なイベント情報、実績、F
   - 日本語混在見出しに負のletter-spacingを使わない。
   - フォントサイズはトークン化する: 見出し `--type-*`、本文 `--fs-body` / `--fs-body-lg`、
     キャプション `--fs-caption`、マイクロラベル `--fs-micro`、アイブロウ `--fs-eyebrow`。
-  - トラッキングは `--ls-normal` / `--ls-cta`（CTA） / `--ls-wide` / `--ls-wider` / `--ls-widest` を使う。
+  - トラッキングは `--ls-normal` / `--ls-relaxed`（小さめ日本語本文） / `--ls-cta`（CTA） /
+    `--ls-wide` / `--ls-wider` / `--ls-widest` を使う。
+  - 行間は Kinmei マスターの命名スケールに合わせる:
+    `--lh-tight 1.2`（ディスプレイ） / `--lh-snug 1.4`（見出し） / `--lh-normal 1.7` /
+    `--lh-relaxed 1.85`（本文・日本語のスイートスポット） / `--lh-loose 2`（高密度本文）。
+    本文は `--lh-relaxed`、日本語を含む見出しは詰めすぎない（h2 は約 1.2）。
+  - 日本語の描画品質: `body` に `font-feature-settings: "palt" 1`、`text-rendering: optimizeLegibility`、
+    フォントスムージングを適用する（句読点カーニングと可読性のため）。
 - Shape
   - ナビ/CTA/フィルターはピル型（`--radius-pill`）。
   - 角丸スケールは `--radius-sm` `8px` / `--radius-md` `16px` / `--radius-lg` `24px`。
@@ -27,6 +34,7 @@ TOP は SusHi Tech Tokyo のように、巨大なイベント情報、実績、F
 - Space
   - 間隔スケール `--space-1`〜`--space-9`（6px〜88px）を使う。
   - セクション縦は `--section-pad-y: clamp(64px, 10vw, 120px)`、横は `--section-pad-x: clamp(20px, 4vw, 40px)`。
+  - 固定ナビ下のアンカー着地は `--nav-h` を `scroll-margin-top` に使い、見出しがナビに隠れないようにする。
   - ブレークポイントは `1024px` / `768px` / `480px`。
 
 ## Accessibility
