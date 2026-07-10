@@ -6,26 +6,37 @@
 
 TOP は SusHi Tech Tokyo のように、巨大なイベント情報、実績、Focus、Contents、最新/過去イベントの流れで構成します。イベント詳細は Peatix 型の「カバー画像、日時、会場、チケット、詳細、タイムテーブル、主催者」を1ページで確認できる構成です。
 
-## Tokens
+すべての値は `styles.css` の `:root` に CSS カスタムプロパティとして定義し、
+生の数値をコンポーネントに直接書かない（トークン経由で参照する）ことを原則にします。
 
 - Color
-  - `--bg`: `#0b0808`
-  - `--bg-2`: `#171110`
-  - `--ink`: `#fffaf5`
-  - `--ink-soft`: `#d7ccc4`
-  - `--ink-mute`: `#8f8078`
-  - `--accent`: `#12a9e0`
-  - `--accent-2`: `#087fae`
-  - `--accent-soft`: `#7ee5ff`
+  - 背景サーフェススケール: `--bg` `#0b0808` / `--bg-2` `#171110` / `--bg-3` `#261b19`
+  - インク: `--ink` `#fffaf5` / `--ink-soft` `#d7ccc4` / `--ink-mute` `#8f8078`
+  - アクセント: `--accent` `#12a9e0`（基準）/ `--accent-2` `#087fae`（押下・深み）/ `--accent-soft` `#7ee5ff`（ホバー・強調）
+  - グラス面: `--glass` / `--glass-strong` / `--glass-cyan`、罫線は `--rule` / `--rule-strong`
 - Type
-  - 日本語ファーストのフォントスタック。
+  - 日本語ファーストのフォントスタック（`--font-sans`）。ラテン専用は `--font-latin`。
   - 日本語混在見出しに負のletter-spacingを使わない。
+  - フォントサイズはトークン化する: 見出し `--type-*`、本文 `--fs-body` / `--fs-body-lg`、
+    キャプション `--fs-caption`、マイクロラベル `--fs-micro`、アイブロウ `--fs-eyebrow`。
+  - トラッキングは `--ls-normal` / `--ls-cta`（CTA） / `--ls-wide` / `--ls-wider` / `--ls-widest` を使う。
 - Shape
-  - ナビ/CTAはピル型。
-  - カードは `8px` - `24px` の角丸で、グラス風の半透明面を使う。
+  - ナビ/CTA/フィルターはピル型（`--radius-pill`）。
+  - 角丸スケールは `--radius-sm` `8px` / `--radius-md` `16px` / `--radius-lg` `24px`。
+    カードは `8px` - `24px` の角丸で、グラス風の半透明面を使う。
 - Space
-  - セクションは `clamp(64px, 10vw, 120px)`。
+  - 間隔スケール `--space-1`〜`--space-9`（6px〜88px）を使う。
+  - セクション縦は `--section-pad-y: clamp(64px, 10vw, 120px)`、横は `--section-pad-x: clamp(20px, 4vw, 40px)`。
   - ブレークポイントは `1024px` / `768px` / `480px`。
+
+## Accessibility
+
+- フォーカス: すべてのインタラクティブ要素はキーボード操作時に `:focus-visible` の
+  リング（`--focus-outline` / `--focus-ring`）を表示する。フォーカスが見えない状態を作らない。
+- タップ領域: ナビリンク・CTA・フィルターボタンは最小 `44px` の高さを確保する。
+- モーション: `prefers-reduced-motion: reduce` でスムーススクロールとトランジションを抑制する。
+- コントラスト: `--ink-mute` は暗背景上で本文最小サイズ AA（4.5:1）を満たす範囲で使う。
+- ホバーとフォーカスの見た目は対で定義し、片方だけにしない。
 
 ## Components
 
