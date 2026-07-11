@@ -27,11 +27,11 @@
   --ls-wide: 0.12em;
   --ls-wider: 0.2em;
   --ls-widest: 0.24em;
-  --type-display-size: clamp(48px, 8vw, 96px);
+  --type-display-size: clamp(46px, 7.2vw, 88px);
   --type-display-lh: 0.98;
   --type-h1-size: clamp(36px, 4.4vw, 64px);
   --type-h1-lh: 1.08;
-  --type-h2-size: clamp(30px, 3.4vw, 52px);
+  --type-h2-size: clamp(28px, 3vw, 44px);
   --type-h2-lh: 1.14;
   --type-h3-size: clamp(22px, 1.9vw, 30px);
   --type-h3-lh: 1.24;
@@ -369,7 +369,7 @@ p {
 
 .detail-block h2 {
   max-width: 14em;
-  font-size: clamp(28px, 3vw, 46px);
+  font-size: clamp(26px, 2.7vw, 40px);
   line-height: 1.16;
 }
 
@@ -804,7 +804,7 @@ p {
 
 .event-hero-copy h1 {
   max-width: 13em;
-  font-size: clamp(34px, 3.6vw, 52px);
+  font-size: clamp(32px, 3.1vw, 46px);
   line-height: 1.12;
 }
 
