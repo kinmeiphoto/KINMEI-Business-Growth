@@ -22,6 +22,7 @@
   --font-latin: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
   --ls-normal: 0;
+  --ls-relaxed: 0.04em;
   --ls-cta: 0.08em;
   --ls-wide: 0.12em;
   --ls-wider: 0.2em;
@@ -41,8 +42,16 @@
   --fs-caption: 13px;
   --fs-micro: 0.75rem;
   --fs-eyebrow: 12px;
-  --lh-body: 1.78;
-  --lh-body-tight: 1.58;
+  /* Line-heights — Japanese needs more vertical breathing than Latin.
+     Canonical named scale synced from the Kinmei master design system. */
+  --lh-tight: 1.2;
+  --lh-snug: 1.4;
+  --lh-normal: 1.7;
+  --lh-relaxed: 1.78;
+  --lh-loose: 2;
+  /* Legacy role names mapped onto the canonical scale. */
+  --lh-body: var(--lh-relaxed);
+  --lh-body-tight: var(--lh-normal);
   --lh-caption: 1.45;
   --space-1: 6px;
   --space-2: 10px;
@@ -55,6 +64,7 @@
   --space-9: 80px;
   --section-pad-y: clamp(72px, 8vw, 112px);
   --section-pad-x: clamp(22px, 4vw, 56px);
+  --nav-h: 104px;
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -73,6 +83,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -97,9 +108,17 @@ body {
     linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 52%, var(--bg) 100%);
   color: var(--ink);
   font-family: var(--font-sans);
+  font-weight: 400;
   font-size: var(--fs-body);
   line-height: var(--lh-body);
+  /* Keep 0 at the body level. Tightening < 0 cramps Japanese punctuation
+     and is only valid for pure-Latin display contexts. */
   letter-spacing: var(--ls-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Proportional-alternate metrics tighten Japanese punctuation spacing. */
+  font-feature-settings: "palt" 1;
 }
 
 body::before {
@@ -137,6 +156,12 @@ h3,
 h4,
 p {
   margin: 0;
+}
+
+/* Offset in-page anchor jumps so section headings clear the fixed glass nav. */
+section[id],
+[id] {
+  scroll-margin-top: var(--nav-h);
 }
 
 h1,
