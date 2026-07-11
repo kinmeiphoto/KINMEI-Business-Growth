@@ -14,33 +14,35 @@
   --glass-cyan: rgba(18, 169, 224, 0.14);
   --rule: rgba(255, 250, 245, 0.12);
   --rule-strong: rgba(255, 250, 245, 0.28);
-  --shadow-glass: 0 24px 80px rgba(0, 0, 0, 0.34);
-  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic Medium",
-    "Yu Gothic", "Noto Sans JP", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --shadow-glass: 0 18px 54px rgba(0, 0, 0, 0.28);
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic Medium", "Yu Gothic", "Noto Sans JP",
+    "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   --font-display: var(--font-sans);
-  --font-latin: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  --font-latin: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
   --ls-normal: 0;
   --ls-cta: 0.08em;
   --ls-wide: 0.12em;
   --ls-wider: 0.2em;
-  --ls-widest: 0.3em;
-  --type-display-size: clamp(58px, 11vw, 136px);
-  --type-display-lh: 0.9;
-  --type-h1-size: clamp(42px, 5.6vw, 76px);
+  --ls-widest: 0.24em;
+  --type-display-size: clamp(48px, 8vw, 96px);
+  --type-display-lh: 0.98;
+  --type-h1-size: clamp(36px, 4.4vw, 64px);
   --type-h1-lh: 1.08;
-  --type-h2-size: clamp(34px, 4.8vw, 64px);
-  --type-h2-lh: 1.12;
-  --type-h3-size: clamp(24px, 2.7vw, 38px);
-  --type-h3-lh: 1.2;
-  --type-h4-size: clamp(20px, 1.7vw, 26px);
-  --type-h4-lh: 1.32;
-  --fs-body: clamp(15px, 0.35vw + 14px, 18px);
-  --fs-body-lg: clamp(18px, 1.2vw + 15px, 26px);
+  --type-h2-size: clamp(30px, 3.4vw, 52px);
+  --type-h2-lh: 1.14;
+  --type-h3-size: clamp(22px, 1.9vw, 30px);
+  --type-h3-lh: 1.24;
+  --type-h4-size: clamp(18px, 1.2vw, 22px);
+  --type-h4-lh: 1.34;
+  --fs-body: clamp(15px, 0.25vw + 14px, 17px);
+  --fs-body-lg: clamp(17px, 0.8vw + 15px, 22px);
   --fs-caption: 13px;
   --fs-micro: 0.75rem;
   --fs-eyebrow: 12px;
-  --lh-body: 1.82;
-  --lh-body-tight: 1.65;
+  --lh-body: 1.78;
+  --lh-body-tight: 1.58;
   --lh-caption: 1.45;
   --space-1: 6px;
   --space-2: 10px;
@@ -48,18 +50,18 @@
   --space-4: 18px;
   --space-5: 24px;
   --space-6: 32px;
-  --space-7: 48px;
-  --space-8: 64px;
-  --space-9: 88px;
-  --section-pad-y: clamp(64px, 10vw, 120px);
-  --section-pad-x: clamp(20px, 4vw, 40px);
+  --space-7: 44px;
+  --space-8: 60px;
+  --space-9: 80px;
+  --section-pad-y: clamp(72px, 8vw, 112px);
+  --section-pad-x: clamp(22px, 4vw, 56px);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-pill: 999px;
-  --btn-min-height: 64px;
-  --btn-min-width: 240px;
-  --btn-pad-x: 36px;
+  --btn-min-height: 52px;
+  --btn-min-width: 200px;
+  --btn-pad-x: 28px;
   --btn-radius: var(--radius-pill);
   --focus-ring: 0 0 0 3px rgba(126, 229, 255, 0.6);
   --focus-outline: 2px solid var(--accent-soft);
@@ -90,8 +92,8 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(900px 620px at 10% 4%, rgba(18, 169, 224, 0.18), transparent 62%),
-    radial-gradient(900px 540px at 90% 12%, rgba(126, 229, 255, 0.08), transparent 58%),
+    radial-gradient(900px 620px at 10% 4%, rgba(18, 169, 224, 0.1), transparent 62%),
+    radial-gradient(900px 540px at 90% 12%, rgba(126, 229, 255, 0.055), transparent 58%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 52%, var(--bg) 100%);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -107,9 +109,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 250, 245, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 250, 245, 0.025) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(rgba(255, 250, 245, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 250, 245, 0.016) 1px, transparent 1px);
+  background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 72%);
 }
 
@@ -182,9 +184,7 @@ p {
   gap: 24px;
   padding: 14px 24px;
   color: var(--ink);
-  background:
-    linear-gradient(135deg, rgba(35, 24, 21, 0.72), rgba(18, 169, 224, 0.08)),
-    var(--glass);
+  background: rgba(23, 17, 16, 0.72);
   border: 1px solid var(--rule-strong);
   border-radius: var(--radius-pill);
   box-shadow: var(--shadow-glass), inset 0 1px 0 rgba(255, 255, 255, 0.16);
@@ -269,14 +269,15 @@ p {
   position: relative;
   isolation: isolate;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.62fr);
-  gap: clamp(var(--space-7), 6vw, var(--space-9));
-  align-items: end;
-  min-height: 100vh;
-  padding-top: clamp(140px, 18vw, 210px);
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.52fr);
+  gap: clamp(var(--space-7), 7vw, 120px);
+  align-items: center;
+  min-height: 92vh;
+  padding-top: clamp(132px, 14vw, 188px);
+  padding-bottom: clamp(64px, 8vw, 108px);
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(11, 8, 8, 0.9) 0%, rgba(11, 8, 8, 0.66) 52%, rgba(11, 8, 8, 0.82) 100%),
+    linear-gradient(90deg, rgba(11, 8, 8, 0.88) 0%, rgba(11, 8, 8, 0.62) 52%, rgba(11, 8, 8, 0.82) 100%),
     url("./assets/event-room.jpg") center / cover no-repeat;
   box-shadow: inset 0 -180px 140px rgba(11, 8, 8, 0.88);
 }
@@ -290,6 +291,11 @@ p {
   gap: var(--space-5);
 }
 
+.section-head {
+  max-width: 980px;
+  margin-bottom: clamp(var(--space-6), 5vw, var(--space-8));
+}
+
 .eyebrow {
   color: var(--accent);
   font-family: var(--font-latin);
@@ -301,7 +307,7 @@ p {
 }
 
 .hero-copy h1 {
-  max-width: 10ch;
+  max-width: 12ch;
   font-size: var(--type-display-size);
   line-height: var(--type-display-lh);
 }
@@ -336,6 +342,12 @@ p {
   max-width: 46em;
 }
 
+.detail-block h2 {
+  max-width: 14em;
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 1.16;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -366,22 +378,20 @@ p {
 .glass-card,
 .checkout-card,
 .organizer-card {
-  background:
-    linear-gradient(145deg, rgba(255, 250, 245, 0.08), rgba(18, 169, 224, 0.035)),
-    rgba(255, 250, 245, 0.025);
+  background: rgba(255, 250, 245, 0.045);
   border: 1px solid var(--rule);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-glass), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(18px) saturate(135%);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
 }
 
 .hero-ticket {
   display: grid;
-  grid-template-rows: clamp(220px, 30vh, 320px) auto;
+  grid-template-rows: clamp(200px, 26vh, 280px) auto;
   gap: 0;
   width: 100%;
-  max-width: 640px;
+  max-width: 560px;
   justify-self: end;
   align-self: center;
   overflow: clip;
@@ -410,7 +420,7 @@ p {
   display: grid;
   align-content: start;
   gap: var(--space-3);
-  padding: clamp(24px, 3vw, 36px);
+  padding: clamp(22px, 2.5vw, 32px);
 }
 
 .hero-ticket-copy h2 {
@@ -492,7 +502,7 @@ p {
   display: flex;
   align-items: center;
   gap: var(--space-5);
-  margin-bottom: var(--space-7);
+  margin-bottom: var(--space-6);
   color: var(--ink-mute);
   font-size: 11px;
   letter-spacing: var(--ls-widest);
@@ -529,7 +539,7 @@ p {
 .session-list,
 .ticket-list {
   display: grid;
-  gap: var(--space-4);
+  gap: var(--space-5);
 }
 
 .focus-grid {
@@ -542,19 +552,19 @@ p {
 
 .focus-card img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
 }
 
 .focus-card div {
   display: grid;
   gap: var(--space-3);
-  padding: var(--space-5);
+  padding: var(--space-5) var(--space-5) var(--space-6);
 }
 
 .focus-card h3 {
   color: var(--ink);
-  font-size: var(--type-h3-size);
+  font-size: clamp(21px, 1.6vw, 28px);
   line-height: var(--type-h3-lh);
 }
 
@@ -564,28 +574,30 @@ p {
 
 .latest-event {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: 0;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: var(--space-6);
   overflow: hidden;
   margin-bottom: var(--space-8);
+  padding: var(--space-4);
 }
 
 .latest-event > img {
   width: 100%;
   height: 100%;
-  min-height: clamp(360px, 32vw, 520px);
+  min-height: clamp(320px, 28vw, 460px);
   object-fit: cover;
+  border-radius: calc(var(--radius-md) - 4px);
 }
 
 .latest-event-copy {
   align-content: center;
   gap: var(--space-4);
-  padding: clamp(32px, 4vw, 48px);
+  padding: clamp(20px, 3vw, 40px) clamp(20px, 3.5vw, 48px);
 }
 
 .latest-event-copy h3 {
-  font-size: clamp(26px, 3vw, 44px);
-  line-height: 1.22;
+  font-size: clamp(24px, 2.4vw, 36px);
+  line-height: 1.26;
 }
 
 .event-meta {
@@ -726,29 +738,29 @@ p {
   isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  min-height: 88vh;
-  padding: clamp(124px, 12vw, 168px) var(--section-pad-x) clamp(64px, 7vw, 96px);
+  min-height: 82vh;
+  padding: clamp(124px, 11vw, 160px) var(--section-pad-x) clamp(72px, 8vw, 104px);
   width: 100%;
   max-width: none;
   margin-inline: auto;
-  gap: clamp(var(--space-7), 5vw, var(--space-9));
+  gap: clamp(var(--space-7), 7vw, 120px);
   align-items: center;
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(11, 8, 8, 0.72) 0%, rgba(11, 8, 8, 0.52) 46%, rgba(11, 8, 8, 0.88) 100%),
     url("./assets/event-room.jpg") center / cover no-repeat;
-  box-shadow: inset 0 -180px 140px rgba(11, 8, 8, 0.9);
+  box-shadow: inset 0 -140px 120px rgba(11, 8, 8, 0.9);
 }
 
 .event-hero-media {
   align-self: center;
   aspect-ratio: 16 / 9;
-  max-height: min(58vh, 560px);
+  max-height: min(52vh, 520px);
   min-height: 0;
   overflow: hidden;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   border: 1px solid var(--rule);
-  box-shadow: var(--shadow-glass);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.3);
 }
 
 .event-hero-media img {
@@ -760,15 +772,15 @@ p {
 
 .event-hero-copy {
   display: grid;
-  gap: var(--space-5);
+  gap: var(--space-4);
   align-content: center;
   max-width: 880px;
 }
 
 .event-hero-copy h1 {
-  max-width: 12em;
-  font-size: clamp(42px, 4.2vw, 62px);
-  line-height: 1.04;
+  max-width: 13em;
+  font-size: clamp(34px, 3.6vw, 52px);
+  line-height: 1.12;
 }
 
 .event-hero-copy p:not(.eyebrow) {
@@ -781,14 +793,14 @@ p {
 .event-shell {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
-  gap: var(--space-6);
+  gap: clamp(var(--space-6), 4vw, var(--space-8));
   align-items: start;
-  padding-top: 0;
+  padding-top: var(--space-8);
 }
 
 .event-detail {
   display: grid;
-  gap: var(--space-9);
+  gap: var(--space-8);
 }
 
 .session-list span {
@@ -863,13 +875,13 @@ p {
 .checkout-card,
 .organizer-card {
   display: grid;
-  gap: var(--space-5);
+  gap: var(--space-4);
   padding: var(--space-5);
 }
 
 .checkout-card h2 {
   font-family: var(--font-latin);
-  font-size: clamp(34px, 3.6vw, 48px);
+  font-size: clamp(30px, 3vw, 42px);
   line-height: 1.05;
 }
 
@@ -920,6 +932,11 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .home-hero,
+  .event-hero {
+    gap: var(--space-7);
+  }
+
   .focus-grid,
   .event-grid {
     grid-template-columns: 1fr 1fr;
@@ -953,10 +970,20 @@ p {
   .event-hero {
     min-height: auto;
     padding-top: 130px;
+    padding-bottom: var(--space-7);
   }
 
   .hero-copy h1 {
-    font-size: clamp(52px, 17vw, 82px);
+    font-size: clamp(44px, 13vw, 68px);
+    line-height: 1;
+  }
+
+  .section-head {
+    margin-bottom: var(--space-6);
+  }
+
+  .section-head h2 {
+    font-size: clamp(28px, 9vw, 42px);
   }
 
   .event-hero-media {
@@ -974,11 +1001,16 @@ p {
 
   .latest-event {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
   }
 
   .latest-event > img {
     height: clamp(240px, 62vw, 320px);
     min-height: 0;
+  }
+
+  .latest-event-copy {
+    padding: var(--space-4) var(--space-3) var(--space-5);
   }
 
   .archive-toolbar,

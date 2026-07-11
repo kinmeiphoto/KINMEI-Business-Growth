@@ -2,9 +2,17 @@
 
 ## Direction
 
-`kinmeiphoto/kinmeiphoto` の Kinmei Design System を取り込み、ダーク背景、シアンアクセント、グラス風ナビ/カード、日本語ファーストのタイポグラフィ、ピル型CTAを基準にします。
+`kinmeiphoto/kinmeiphoto` の Kinmei Design System を取り込み、ダーク背景、シアンアクセント、控えめなグラス面、日本語ファーストのタイポグラフィ、ピル型CTAを基準にします。
 
-TOP は SusHi Tech Tokyo のように、巨大なイベント情報、実績、Focus、Contents、最新/過去イベントの流れで構成します。イベント詳細は Peatix 型の「カバー画像、日時、会場、チケット、詳細、タイムテーブル、主催者」を1ページで確認できる構成です。
+TOP は「コミュニティの目的、重点領域、最新イベント、過去イベント」の順に整理します。イベント詳細は Peatix 型の「カバー画像、テーマ、タイムテーブル、参加費、会場、主催者」を1ページで確認できる構成です。
+
+Apple Human Interface Guidelines の考え方をWeb向けに解釈し、以下を優先します。
+
+- Clarity: 見出しは必要以上に巨大化させず、本文・画像・CTAの関係が一目で読める階層にする。
+- Deference: 装飾はコンテンツを邪魔しない濃度に抑える。グリッド背景、グラス効果、影は弱く使う。
+- Depth: 背景、カード、CTAの面を分けるが、過度な立体表現は避ける。
+- Proximity: 見出しと画像を密着させない。セクションヘッダーとコンテンツの間は共通余白を使う。
+- Legibility: Apple系システムフォントを優先し、本文は15px未満にしない。日本語見出しに負のletter-spacingを使わない。
 
 すべての値は `styles.css` の `:root` に CSS カスタムプロパティとして定義し、
 生の数値をコンポーネントに直接書かない（トークン経由で参照する）ことを原則にします。
@@ -15,7 +23,7 @@ TOP は SusHi Tech Tokyo のように、巨大なイベント情報、実績、F
   - アクセント: `--accent` `#12a9e0`（基準）/ `--accent-2` `#087fae`（押下・深み）/ `--accent-soft` `#7ee5ff`（ホバー・強調）
   - グラス面: `--glass` / `--glass-strong` / `--glass-cyan`、罫線は `--rule` / `--rule-strong`
 - Type
-  - 日本語ファーストのフォントスタック（`--font-sans`）。ラテン専用は `--font-latin`。
+  - Apple系システムフォントを先頭に置いた日本語ファーストのフォントスタック（`--font-sans`）。ラテン専用は `--font-latin`。
   - 日本語混在見出しに負のletter-spacingを使わない。
   - フォントサイズはトークン化する: 見出し `--type-*`、本文 `--fs-body` / `--fs-body-lg`、
     キャプション `--fs-caption`、マイクロラベル `--fs-micro`、アイブロウ `--fs-eyebrow`。
@@ -23,10 +31,11 @@ TOP は SusHi Tech Tokyo のように、巨大なイベント情報、実績、F
 - Shape
   - ナビ/CTA/フィルターはピル型（`--radius-pill`）。
   - 角丸スケールは `--radius-sm` `8px` / `--radius-md` `16px` / `--radius-lg` `24px`。
-    カードは `8px` - `24px` の角丸で、グラス風の半透明面を使う。
+    カードは原則 `--radius-md` を使い、グラス風の半透明面は控えめにする。
 - Space
-  - 間隔スケール `--space-1`〜`--space-9`（6px〜88px）を使う。
-  - セクション縦は `--section-pad-y: clamp(64px, 10vw, 120px)`、横は `--section-pad-x: clamp(20px, 4vw, 40px)`。
+  - 間隔スケール `--space-1`〜`--space-9`（6px〜80px）を使う。
+  - セクション縦は `--section-pad-y: clamp(72px, 8vw, 112px)`、横は `--section-pad-x: clamp(22px, 4vw, 56px)`。
+  - `.section-head` は次の画像/カード群との間に共通マージンを持つ。個別に詰めない。
   - ブレークポイントは `1024px` / `768px` / `480px`。
 
 ## Accessibility
@@ -41,10 +50,10 @@ TOP は SusHi Tech Tokyo のように、巨大なイベント情報、実績、F
 ## Components
 
 - Header: Kinmei logo with fixed glass navigation.
-- Home Hero: Large Business Growth title + next event date panel.
+- Home Hero: Business Growth title + latest event panel. タイトルは最大96pxに抑える。
 - Button: Primary blue CTA and secondary outlined action.
 - Report Metrics: Visitors / Meetings / Speakers.
-- Focus Grid: AI / Business Design / Community.
+- Focus Grid: AI / Business Design / Community. 見出しと画像の間は `.section-head` の共通余白で分離する。
 - Contents Grid: Sessions / Timetable / Ticket / Archive.
 - Latest Event: `events.js` の日付から自動選定。
 - Past Event Archive: 年別フィルターを自動生成。
