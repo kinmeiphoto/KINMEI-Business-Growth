@@ -1,4 +1,5 @@
 :root {
+  color-scheme: dark;
   --bg: #0b0808;
   --bg-2: #171110;
   --bg-3: #261b19;
@@ -77,6 +78,28 @@
   --focus-outline: 2px solid var(--accent-soft);
 }
 
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f5f5f7;
+  --bg-2: #ffffff;
+  --bg-3: #e8e8ed;
+  --ink: #1d1d1f;
+  --ink-soft: #424245;
+  --ink-mute: #6e6e73;
+  --accent: #0071e3;
+  --accent-2: #005bb5;
+  --accent-soft: #0a84ff;
+  --logo-brown: #ffffff;
+  --glass: rgba(255, 255, 255, 0.74);
+  --glass-strong: rgba(0, 0, 0, 0.055);
+  --glass-cyan: rgba(0, 113, 227, 0.08);
+  --rule: rgba(0, 0, 0, 0.1);
+  --rule-strong: rgba(0, 0, 0, 0.16);
+  --shadow-glass: 0 18px 54px rgba(0, 0, 0, 0.12);
+  --focus-ring: 0 0 0 3px rgba(0, 113, 227, 0.24);
+  --focus-outline: 2px solid var(--accent);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -132,6 +155,19 @@ body::before {
     linear-gradient(90deg, rgba(255, 250, 245, 0.016) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 72%);
+}
+
+:root[data-theme="light"] body {
+  background:
+    radial-gradient(900px 620px at 12% 0%, rgba(0, 113, 227, 0.08), transparent 58%),
+    linear-gradient(180deg, #fbfbfd 0%, var(--bg) 46%, #ffffff 100%);
+}
+
+:root[data-theme="light"] body::before {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), transparent 72%);
 }
 
 img {
@@ -217,6 +253,11 @@ p {
   -webkit-backdrop-filter: blur(22px) saturate(145%);
 }
 
+:root[data-theme="light"] .site-nav {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
 .logo-link {
   display: inline-flex;
   align-items: center;
@@ -228,6 +269,11 @@ p {
   height: 32px;
   filter: brightness(0) invert(1);
   opacity: 0.94;
+}
+
+:root[data-theme="light"] .brand-logo {
+  filter: none;
+  opacity: 1;
 }
 
 .nav-links {
@@ -249,6 +295,53 @@ p {
 
 .nav-links a:hover {
   color: var(--ink);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+  background: var(--glass);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--glass-strong);
+  border-color: var(--rule-strong);
+}
+
+.theme-icon {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.theme-icon-moon {
+  fill: currentColor;
+  stroke: none;
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon-moon {
+  display: none;
+}
+
+:root[data-theme="dark"] .theme-icon-sun {
+  display: block;
 }
 
 .nav-cta {
@@ -307,6 +400,13 @@ p {
   box-shadow: inset 0 -180px 140px rgba(11, 8, 8, 0.88);
 }
 
+:root[data-theme="light"] .home-hero {
+  background:
+    linear-gradient(90deg, rgba(251, 251, 253, 0.96) 0%, rgba(251, 251, 253, 0.84) 54%, rgba(245, 245, 247, 0.78) 100%),
+    url("./assets/event-room.jpg") center / cover no-repeat;
+  box-shadow: inset 0 -120px 100px rgba(255, 255, 255, 0.94);
+}
+
 .hero-copy,
 .body-stack,
 .section-head,
@@ -314,6 +414,15 @@ p {
 .detail-block {
   display: grid;
   gap: var(--space-5);
+  min-width: 0;
+}
+
+.hero-copy > *,
+.body-stack > *,
+.section-head > *,
+.latest-event-copy > *,
+.detail-block > * {
+  min-width: 0;
 }
 
 .section-head {
@@ -365,6 +474,7 @@ p {
 .newsletter-section p,
 .detail-block p {
   max-width: 46em;
+  overflow-wrap: anywhere;
 }
 
 .detail-block h2 {
@@ -411,12 +521,21 @@ p {
   -webkit-backdrop-filter: blur(16px) saturate(120%);
 }
 
+:root[data-theme="light"] .hero-ticket,
+:root[data-theme="light"] .glass-card,
+:root[data-theme="light"] .checkout-card,
+:root[data-theme="light"] .organizer-card {
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+}
+
 .hero-ticket {
   display: grid;
   grid-template-rows: clamp(200px, 26vh, 280px) auto;
   gap: 0;
   width: 100%;
   max-width: 560px;
+  min-width: 0;
   justify-self: end;
   align-self: center;
   overflow: clip;
@@ -506,6 +625,10 @@ p {
 .ticket-stats div {
   padding: 14px;
   background: rgba(11, 8, 8, 0.68);
+}
+
+:root[data-theme="light"] .ticket-stats div {
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .ticket-stats dt {
@@ -657,6 +780,10 @@ p {
   line-height: var(--lh-caption);
 }
 
+:root[data-theme="light"] .event-tags li {
+  color: var(--accent);
+}
+
 .archive-toolbar {
   display: flex;
   align-items: end;
@@ -708,6 +835,10 @@ p {
   color: var(--ink-soft);
 }
 
+:root[data-theme="light"] .empty-state {
+  background: rgba(255, 255, 255, 0.82);
+}
+
 .event-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -750,6 +881,11 @@ p {
   opacity: 0.9;
 }
 
+:root[data-theme="light"] .site-footer img {
+  filter: none;
+  opacity: 1;
+}
+
 .site-footer a {
   color: var(--ink-soft);
   font-family: var(--font-latin);
@@ -777,6 +913,13 @@ p {
   box-shadow: inset 0 -140px 120px rgba(11, 8, 8, 0.9);
 }
 
+:root[data-theme="light"] .event-hero {
+  background:
+    linear-gradient(90deg, rgba(251, 251, 253, 0.92) 0%, rgba(251, 251, 253, 0.78) 46%, rgba(245, 245, 247, 0.92) 100%),
+    url("./assets/event-room.jpg") center / cover no-repeat;
+  box-shadow: inset 0 -120px 110px rgba(255, 255, 255, 0.96);
+}
+
 .event-hero-media {
   align-self: center;
   aspect-ratio: 16 / 9;
@@ -786,6 +929,10 @@ p {
   border-radius: var(--radius-md);
   border: 1px solid var(--rule);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="light"] .event-hero-media {
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
 }
 
 .event-hero-media img {
@@ -943,6 +1090,10 @@ p {
   filter: brightness(0) invert(1);
 }
 
+:root[data-theme="light"] .organizer-card img {
+  filter: none;
+}
+
 @media (max-width: 1024px) {
   .nav-links {
     display: none;
@@ -977,18 +1128,25 @@ p {
     left: 14px;
     right: 14px;
     top: 12px;
+    gap: 10px;
     padding: 10px 14px;
   }
 
   .brand-logo {
     height: 28px;
-    max-width: min(220px, 54vw);
+    max-width: min(188px, 42vw);
     object-fit: contain;
+  }
+
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
   }
 
   .nav-cta {
     min-width: auto;
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
   .home-hero,
@@ -996,6 +1154,11 @@ p {
     min-height: auto;
     padding-top: 130px;
     padding-bottom: var(--space-7);
+  }
+
+  .hero-ticket {
+    max-width: 100%;
+    justify-self: stretch;
   }
 
   .hero-copy h1 {
