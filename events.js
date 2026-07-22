@@ -1,17 +1,17 @@
 const events = [
   {
-    id: "taopix-ai-growth-2026",
-    title: "TAOPIXの代表に聞く：AI時代の新たな印刷業の成長戦略",
+    id: "taopix-iwata-seminar-2026",
+    title: "TAOPIX社 × 株式会社イワタ セミナー",
     date: "2026-07-23",
-    time: "13:00 - 15:00",
-    venue: "錦明印刷会社 本社７F イベントルーム",
-    address: "東京都千代田区西神田3-3-3",
+    time: "14:00 スタート",
+    venue: "オンライン(Zoom)",
+    address: "",
     status: "open",
     summary:
-      "TAOPIXの代表を迎え、AI時代に印刷業がどのように新しい成長戦略を描くかを聞く会場開催イベントです。",
+      "TAOPIX社と株式会社イワタを迎え、最新プロダクト「Taopix.ai」とTAOPIX向けフォント専用ライセンスパックを紹介するオンラインセミナーです。",
     image: "./assets/event-room.jpg",
-    tags: ["AI", "Growth Strategy", "TAOPIX"],
-    ctaLabel: "イベント詳細を見る",
+    tags: ["TAOPIX", "Taopix.ai", "フォント"],
+    ctaLabel: "セミナー詳細を見る",
     ctaUrl: "./event.html",
   },
 ];
@@ -60,7 +60,7 @@ function renderLatestEvent() {
         <span>${formatDate(latestEvent.date)}</span>
         <span>${latestEvent.time}</span>
         <span>${latestEvent.venue}</span>
-        <span>${latestEvent.address}</span>
+        ${latestEvent.address ? `<span>${latestEvent.address}</span>` : ""}
       </div>
       <p>${latestEvent.summary}</p>
       <ul class="event-tags" aria-label="Event tags">${tagList(latestEvent.tags)}</ul>
@@ -84,7 +84,7 @@ function renderHeroLatestEvent() {
         <span>${formatDate(latestEvent.date)}</span>
         <span>${latestEvent.time}</span>
         <span>${latestEvent.venue}</span>
-        <span>${latestEvent.address}</span>
+        ${latestEvent.address ? `<span>${latestEvent.address}</span>` : ""}
       </div>
       <a class="button button-primary" href="${latestEvent.ctaUrl || "./event.html"}">
         ${latestEvent.ctaLabel || "イベント詳細を見る"}
